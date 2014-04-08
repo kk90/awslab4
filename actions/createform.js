@@ -19,9 +19,9 @@ var task = function(request, callback){
 	//3. generate form fields for S3 POST
 	var s3Form = new S3Form(policy);
 
-	var fields = s3Form.generateS3FormFields();
+	var fields = s3Form.generateS3FormFieldsWithCredientals(awsConfig);
 
-	fields.concat(s3Form.generateS3CredientalsFields(awsConfig));
+	//fields = fields.concat(s3Form.generateS3CredientalsFields(awsConfig));
 	
 
 	//4. get bucket name
