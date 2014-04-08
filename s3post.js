@@ -66,11 +66,11 @@ S3Form.prototype.generateS3FormFields = function() {
 
 S3Form.prototype.generateS3FormFieldsWithCredentials = function(awsConfig){
 	var formFields = this.generateS3FormFields();
-	formFields = formFields.concat(addS3CredientalsFields, awsConfig);
+	formFields = formFields.concat(this.addS3CredientalsFields(formFields, awsConfig));
 	return formFields;
 }
 
-var addS3CredientalsFields = function(fields, awsConfig){
+S3Form.prototype.addS3CredientalsFields = function(fields, awsConfig){
 	var fields = [];
 	fields.push(hiddenField(
 		ACCESS_KEY_FIELD_NAME, awsConfig.accessKeyId));
@@ -94,4 +94,5 @@ var hiddenField = function(fieldName, value) {
 
 exports.Policy = Policy; // usage: policy = new Policy(policyData);
 exports.S3Form = S3Form; // usage: s3Form = new S3Form(awsConfig, policy);
+
 

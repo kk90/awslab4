@@ -19,7 +19,7 @@ var task = function(request, callback){
 	//3. generate form fields for S3 POST
 	var s3Form = new S3Form(policy);
 
-	var fields = s3Form.generateS3FormFieldsWithCredientals(awsConfig);
+	var fields = s3Form.generateS3FormFieldsWithCredentials(awsConfig);
 
 	//fields = fields.concat(s3Form.generateS3CredientalsFields(awsConfig));
 	
