@@ -67,6 +67,7 @@ S3Form.prototype.generateS3FormFields = function() {
 S3Form.prototype.generateS3FormFieldsWithCredentials = function(awsConfig){
 	var formFields = this.generateS3FormFields();
 	formFields = formFields.concat(addS3CredientalsFields, awsConfig);
+	return formFields;
 }
 
 var addS3CredientalsFields = function(fields, awsConfig){
@@ -93,5 +94,4 @@ var hiddenField = function(fieldName, value) {
 
 exports.Policy = Policy; // usage: policy = new Policy(policyData);
 exports.S3Form = S3Form; // usage: s3Form = new S3Form(awsConfig, policy);
-
 
