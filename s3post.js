@@ -67,7 +67,8 @@ S3Form.prototype.generateS3FormFields = function() {
 S3Form.prototype.generateS3FormFieldsWithCredentials = function(awsConfig){
 	var formFields = this.generateS3FormFields();
 	formFields = formFields.concat(addS3CredientalsFields, awsConfig);
-}
+	return formFields;
+} 
 
 var addS3CredientalsFields = function(fields, awsConfig){
 	var fields = [];
